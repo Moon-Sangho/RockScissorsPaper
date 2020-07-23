@@ -1,21 +1,27 @@
-let left = 0;
+let computerPick = '0';
+let dictionary = { // 딕셔너리 자료구조
+    rock: '0',
+    scissor: '-135px',
+    paper: '-284px'
+};
 
 setInterval(function() {
-    if (left === 0) {
-        left = '-135px'
-    } else if (left === '-135px') {
-        left = '-284px';
+    if (computerPick === dictionary.rock) {
+        computerPick = dictionary.scissor
+    } else if (computerPick === dictionary.scissor) {
+        computerPick = dictionary.paper;
     } else {
-        left = 0;
+        computerPick = dictionary.rock;
     }
     document.querySelector("#computer").style.background =
-        'url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ' + left + ' 0';
+        'url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ' + computerPick + ' 0';
 }, 100); 
 
 
 document.querySelectorAll('.btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
-        console.log(this.textContent, left);
+        let myPick = this.textContent;
+        console.log(myPick, computerPick);
     });
 });
 

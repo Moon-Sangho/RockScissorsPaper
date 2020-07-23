@@ -13,3 +13,6 @@
 
 * 5th commit
   리팩토링
+
+* 6th commit
+  리팩토링

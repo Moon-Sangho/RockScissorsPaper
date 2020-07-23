@@ -38,16 +38,17 @@ const score = {
 document.querySelectorAll('.btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
         clearInterval(interval);
-        setTimeout(function () {
-            intervalMaker();
-        }, 1000);
-        let myPick = this.textContent;
-        if (score[myPick] - score[computerPick(imageCoordinate)] === 0) {
-            console.log('Draw!');
-        } else if (score[myPick] - score[computerPick(imageCoordinate)] === -1 || score[myPick] - score[computerPick(imageCoordinate)] === 2) {
-            console.log('You win!');
+        intervalMaker();
+        const myPick = this.textContent;
+        const myScore = score[myPick];
+        const computerScore = score[computerPick(imageCoordinate)];
+        const scoreGap = myScore - computerScore;
+        if (scoreGap === 0) {
+            alert('Draw!');
+        } else if ([-1, 2].includes(scoreGap)) {
+            alert('You win!');
         } else {
-            console.log('You lose!');
+            alert('You lose!');
         }
     });
 });

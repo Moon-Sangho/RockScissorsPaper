@@ -35,23 +35,52 @@ const score = {
     보: -1
 };
 
+const result = document.getElementById('result');
+const init = document.getElementById('init');
+let playTime = 0;
+let winNumber = 0;
+let loseNumber = 0;
+let drawNumber = 0;
+
 document.querySelectorAll('.btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
         clearInterval(interval);
         intervalMaker();
+        playTime++;
+        init.style.display = 'inline-block';
         const myPick = this.textContent;
         const myScore = score[myPick];
         const computerScore = score[computerPick(imageCoordinate)];
         const scoreGap = myScore - computerScore;
         if (scoreGap === 0) {
             alert('Draw!');
+            drawNumber++;
         } else if ([-1, 2].includes(scoreGap)) {
             alert('You win!');
+            winNumber++;
         } else {
             alert('You lose!');
+            loseNumber++;
         }
+        result.innerHTML = "플레이 횟수 : " + playTime + "<br>" + 
+                           "승리 횟수 : " + winNumber + "<br>" + 
+                           "패배 횟수 : " + loseNumber + "<br>" +
+                           "무승부 횟수 : " + drawNumber;
     });
 });
+
+function initRecord() {
+    playTime = 0;
+    winNumber = 0;
+    loseNumber = 0;
+    drawNumber = 0;
+    result.innerHTML = "플레이 횟수 : " + 0 + "<br>" + 
+                       "승리 횟수 : " + 0 + "<br>" + 
+                       "패배 횟수 : " + 0 + "<br>" +
+                       "무승부 횟수 : " + 0;
+}
+
+init.addEventListener('click', initRecord);
 
 // 가위: 1, 바위: 0, 보: -1
 //

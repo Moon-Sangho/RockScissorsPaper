@@ -1,4 +1,7 @@
-https://moon-sangho.github.io/RockScissorsPaper/
+* output: https://moon-sangho.github.io/RockScissorsPaper/
+
+* review: https://velog.io/@devmoonsh/JavaScript-%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%841
+          https://velog.io/@devmoonsh/JavaScript-%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%842
 
 * 1st commit
   가위, 바위, 보 이미지가 0.1초마다 바뀌도록 설정,

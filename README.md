@@ -27,3 +27,7 @@
 
 * 8th commit
   open graph 추가
+
+* 9th commit
+  가위바위보 이미지 변경,
+  font-size, button size 확대

@@ -1,8 +1,8 @@
 let imageCoordinate = '0';
 const dictionary = { // 딕셔너리 자료구조
     바위: '0',
-    가위: '-135px',
-    보: '-284px'
+    가위: '-200px',
+    보: '-390px'
 };
 
 function computerPick(imageCoordinate) {
@@ -23,7 +23,7 @@ function intervalMaker() {
             imageCoordinate = dictionary.바위;
         }
         document.querySelector("#computer").style.background =
-            'url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ' + imageCoordinate + ' 0';
+            'url(./main.jpg) ' + imageCoordinate + ' 0';
     }, 100); 
 }
 
